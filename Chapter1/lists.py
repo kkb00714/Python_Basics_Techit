@@ -48,7 +48,7 @@
 
 # 리스트 정렬
 
-colors = ['blue', 'red', 'gray', 'black', 'yellow', 'orange']
+# colors = ['blue', 'red', 'gray', 'black', 'yellow', 'orange']
 
 # 정렬 1 (sort) => 리스트에서 오름차순으로 정렬해줌.
 # colors.sort()
@@ -68,5 +68,53 @@ colors = ['blue', 'red', 'gray', 'black', 'yellow', 'orange']
 
 # 가장 마지막에 있는 요소를 가져옴
 # print(colors[-1])
+
+# colors = ['blue', 'red', 'gray', 'black', 'yellow', 'orange']
+
+# 리스트 슬라이싱1 [원하는 첫번째 인덱스:원하는 마지막 인덱스]
+# 단, 마지막 인덱스(종료되는 지점)는 제외된 채 출력됨
+# print(colors[1:5])
+
+# 리스트 슬라이싱2 [:원하는 마지막 인덱스]
+# 단, 마지막 인덱스(종료되는 지점)는 제외된 채로 출력됨
+# print(colors[:4])
+
+# 리스트 슬라이싱3 [원하는 첫 인덱스:]
+# print(colors[2:])
+
+# 리스트 슬라이싱4 - 거꾸로 카운트하는 방법 (뒤에서 -5번째부터 마지막까지 카운트해줌)
+# print(colors[-5:]) # 단, 리스트가 거꾸로 출력되지는 않음
+
+# colors_2 = colors[:] # colors에 있는 모든 값들을 colors_2에 복사함
+# 만약 colors_2 = colors 로 코드를 사용한다면
+# 데이터의 원래 주소가 서로 같으므로, colors_2 혹은 colors에서 값을 바꾸면
+# 두 리스트에 전부 영향을 끼칠 수 있음. 따라서 저렇게 따로 선언해주는 게 좋음
+
+# print(colors_2)
+
+scores = [80, 100, 96, 43, 65, 78]
+
+# scores.sort()
+# print(scores)
+
+# scores.sort(reverse=True)
+# print(scores)
+
+# for 뒤에서 대부분 단수형 변수를 사용함.
+# for score in scores:
+#     if score >= 80:
+#         print(score)
+#     else: 
+#         print("Fail")
+
+max_val = max(scores) # 최댓값 반환
+min_val = min(scores) # 최솟값 반환
+sum_val = sum(scores) # 모두 더해서 반환
+print(sum_val)
+
+sum_values = 0
+for score in scores:
+    sum_values = sum_values + score
+print(sum_values)
 
 
