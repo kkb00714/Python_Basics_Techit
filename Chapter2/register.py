@@ -5,7 +5,7 @@ print('회원가입\n')
 print('==============================\n')
 
 register = False
-i = 1
+i = 0
 
 while not register:
     print('회원가입을 진행하시겠습니까? \n ( N : 취소 / Y : 진행 )')
@@ -30,18 +30,14 @@ while not register:
         exit() # 프로그램을 종료시키는 메서드 
         
     else:
-        print('잘못 입력하셨습니다 ')
-        # while i < 4:
-        #     print(f"{i}번 잘못 입력하셨습니다.")
-        #     i += 1
-            
-        #     if i == 3:
-        #         print('세 번 이상 잘못 입력하셨습니다. \n')
-        #         print('프로그램을 종료합니다.')
-        #     exit
-            
+        i += 1
+        print(f'{i}번 잘못 입력하셨습니다 ')
         
+        if i == 3:
+            print('3번 잘못 입력하셨습니다.\n\n프로그램을 종료합니다.')
+            exit()
 
+i = 0
 users = []
 
 while True:
@@ -67,6 +63,33 @@ while True:
             
     email = input('E-mail: ')
     
+    # 입력받은 값들을 할당함
+    user['username'] = username 
+    user['password'] = password
+    user['name'] = name
+    user['birth_date'] = birth_date
+    user['email'] = email
     
+    users.append(user)
+    print(users)
     
+    print('==============================\n')
+    print(f"{user['name']} 님, 가입을 환영합니다!\n")
+    print('==============================\n')
+    
+    print('회원가입을 추가로 진행하시겠습니까? \n ( N : 취소 / Y : 진행 )')
+    
+    register_another_input = input('>>')
+    register_another_input = register_another_input.lower()
+    
+    if register_another_input == 'y':
+        pass # 어떠한 작업도 수행하지 않고 if문을 빠져나옴
+    elif register_another_input == 'n':
+        exit()
+    else:
+        print(f'{i}번 잘못 입력하셨습니다 ')
+        
+        if i == 3:
+            print('3번 잘못 입력하셨습니다.\n\n프로그램을 종료합니다.')
+            exit()
     
